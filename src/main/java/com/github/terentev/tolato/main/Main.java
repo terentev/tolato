@@ -1,6 +1,5 @@
 package com.github.terentev.tolato.main;
 
-import javax.lang.model.type.TypeMirror;
 import java.util.Map;
 
 public class Main {
@@ -8,10 +7,6 @@ public class Main {
 
     public static enum FieldType {
         BIT, BYTE1, BYTE2, BYTE4, BYTE8, BYTEX;
-
-        public static FieldType get(TypeMirror type) {
-
-        }
     }
 
     public static interface ClassModelInterface<T> {
