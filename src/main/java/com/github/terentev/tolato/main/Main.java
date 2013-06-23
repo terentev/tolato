@@ -4,9 +4,8 @@ import java.util.Map;
 
 public class Main {
 
-
     public static enum FieldType {
-        BIT, BYTE1, BYTE2, BYTE4, BYTE8, BYTEX;
+        BIT, BYTE1, BYTE2, BYTE4, BYTE8, BYTEX
     }
 
     public static interface ClassModelInterface<T> {
