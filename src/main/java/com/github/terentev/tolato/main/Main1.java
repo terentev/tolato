@@ -3,6 +3,7 @@ package com.github.terentev.tolato.main;
 import com.github.terentev.tolato.classes.Range;
 import com.github.terentev.tolato.classes.TypeData;
 import com.github.terentev.tolato.interfaces.*;
+import com.github.terentev.tolato.serialization.TypeDataSer;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -11,7 +12,6 @@ import java.util.Map;
 import static com.google.common.base.Preconditions.checkState;
 
 public class Main1 {
-
 
     public static interface RangeInterface {
         void writeStart(int start, Towriter data);
@@ -34,7 +34,7 @@ public class Main1 {
         for (Range x : model.tags()) {
             for (int y : x.tags) {
                 TypeData td = model.typeData(obj, x.start + y);
-                TypeData.write(td, data);
+                TypeDataSer.write(td, data);
 
             }
         }
