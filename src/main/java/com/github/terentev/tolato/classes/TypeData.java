@@ -42,18 +42,20 @@ public enum TypeData {
     }
 
     public static TypeData read(Toreader data) {
-        if (!data.readBit()) {
-            return VAR_INT;
-        } else {
-            boolean a = data.readBit();
-            boolean b = data.readBit();
-            if (!a && !b)
+        int a = data.readBit() ? 0 : (1 << 3 + data.readBitInt() << 1 + data.readBitInt());
+        switch (a) {
+            case 0:
+                return VAR_INT;
+            case 0x100:
                 return OBJECT;
-            if (!a)
+            case 0x101:
                 return REFERENCE;
-            if (!b)
+            case 0x110:
                 return ARRAY_OBJECT;
-            return ARRAY_PRIMITIVE;
+            case 0x111:
+                return ARRAY_PRIMITIVE;
+            default:
+                throw new RuntimeException("never");
         }
     }
 }

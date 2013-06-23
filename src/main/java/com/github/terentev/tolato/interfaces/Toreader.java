@@ -4,5 +4,7 @@ public interface Toreader {
 
     boolean readBit();
 
+    int readBitInt();
+
     int[] readTags();
 }
