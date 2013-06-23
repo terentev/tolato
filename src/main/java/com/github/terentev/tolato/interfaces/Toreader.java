@@ -7,4 +7,6 @@ public interface Toreader {
     int readBitInt();
 
     int[] readTags();
+
+    int shift();
 }

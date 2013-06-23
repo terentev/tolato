@@ -37,7 +37,7 @@ public class TypeDataSer {
     }
 
     public static TypeData read(Toreader data) {
-        int a = data.readBit() ? 0 : (1 << 3 + data.readBitInt() << 1 + data.readBitInt());
+        int a = data.readBit() ? 0 : (1 << 2 + data.readBitInt() << 1 + data.readBitInt());
         switch (a) {
             case 0:
                 return TypeData.VAR_INT;

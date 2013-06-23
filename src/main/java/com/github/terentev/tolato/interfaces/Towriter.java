@@ -6,4 +6,6 @@ public interface Towriter {
     void writeBit(boolean value);
 
     void writeTags(int[] tags);
+
+    int shift();
 }
