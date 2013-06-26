@@ -9,4 +9,6 @@ public interface Toreader {
     int[] readTags();
 
     int shift();
+
+    byte readByte();
 }
